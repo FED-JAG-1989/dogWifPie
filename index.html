@@ -276,14 +276,8 @@
               id="w-node-_211dd6c1-4ae7-1234-a890-05d165089cb7-01c4786c"
               class="navbar2_menu is-page-height-tablet w-nav-menu"
             >
-              <a href="#about" class="navbar2_link w-nav-link">About</a>
-              <a href="#tokenomics" class="navbar2_link w-nav-link"
-                >Tokenomics</a
-              >
-              <a href="#how-to-buy" class="navbar2_link w-nav-link"
-                >How to buy</a
-              >
-              <a href="#" class="navbar2_link chart-link w-nav-link">Chart</a>
+              <a href="#" target="_blank" class="navbar2_link w-nav-link telegram-link">Telegram</a>
+              <a href="#" target="_blank" class="navbar2_link chart-link w-nav-link">Chart</a>
             </nav>
 
             <div
@@ -452,7 +446,7 @@
                         </svg>
                       </div>
                       <div class="music w-embed">
-                        <audio id="audio-player" src="audio/meow.mp3" autoplay loop></audio>
+                        <audio id="audio-player" src="audio/meow.mp3" autoplay loop muted></audio>
                       </div>
                     </div>
                     </div>
@@ -551,7 +545,7 @@
       </div>
       <div class="links-script w-embed w-script">
         <script>
-          const contractAddress = "";
+          const contractAddress = "46DCdTUrcTVcXawfJrkPMPmQy6bvKagcvSjNQqeXARGR";
           $(".telegram-link").attr("href", "https://t.me/dogWifPieCommunityPortal");
           $(".twitter-link").attr("href", "");
           $(".changetoca").text(contractAddress);
@@ -561,11 +555,11 @@
           );
           $(".chart-link").attr(
             "href",
-            `https://www.dextools.io/app/en/solana/pair-explorer/${contractAddress}`
+            `https://www.pump.fun/${contractAddress}`
           );
           $(".buy-link").attr(
             "href",
-            `https://raydium.io/swap/?inputCurrency=sol&outputCurrency=${contractAddress}&fixed=in`
+            `https://www.pump.fun/${contractAddress}`
           );
           $(".etherscan-link").attr(
             "href",
@@ -598,23 +592,20 @@
       </div>
       <div class="music-code w-embed w-script">
         <script>
-          //fixed pause/play
           window.onload = function () {
             const audio = document.getElementById("audio-player");
-          const playPauseButton = document.getElementById("playPauseButton");
-
+            const playPauseButton = document.getElementById("playPauseButton");
             if (audio.paused) {
               audio.play();
-              //playPauseButton.textContent = 'Pause';
               $(".pause-icon").removeClass("hidden");
               $(".play-icon").addClass("hidden");
             } else {
               audio.pause();
-              //playPauseButton.textContent = 'Play';
               $(".play-icon").removeClass("hidden");
               $(".pause-icon").addClass("hidden");
             }
-          });
+          };
+
           //popup
           var playButton = $(".preloader-button");
           var audioPlayer = document.getElementById("audio-player");
